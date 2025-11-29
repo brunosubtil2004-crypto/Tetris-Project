@@ -61,4 +61,10 @@ public interface Game {
      */
     void registerPlayScore(List<Integer> eliminated);
 
+    /**
+     * Retorna a pontuação do jogo atual
+     * @return score do jogo
+     */
+    int score();
+
 }
