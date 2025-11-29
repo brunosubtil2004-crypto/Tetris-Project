@@ -5,7 +5,7 @@ public interface Eliminator {
 
     /**
      * Procura uma sequência de símbolos contíguos no array seq e substitui-os pelo símbolo nothing.
-     * * @param seq O array de símbolos onde procurar.
+     * @param seq O array de símbolos onde procurar.
      * @param blockSize O tamanho mínimo da sequência para ser eliminada.
      * @param nothing O símbolo a usar para substituir os eliminados.
      * @return O número de símbolos eliminados.
