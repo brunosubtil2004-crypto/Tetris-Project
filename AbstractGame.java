@@ -50,7 +50,7 @@ public abstract class AbstractGame implements Game {
         return playArea.gridDimensions()[1];
     }
 
-    public void permutaPiece(int n){
+    public void permutatePiece(int n){
         if (currentPiece != null) {
             currentPiece.permutation(n);
         }

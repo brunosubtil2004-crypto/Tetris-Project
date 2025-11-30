@@ -22,7 +22,7 @@ public interface Game {
      * Aplica uma permutação de n posições na peça corrente do jogo.
      * @param col int
      */
-    void permutaPiece(int col);
+    void permutatePiece(int col);
 
     /**
      * Coloca na coluna col da área de jogo a peça corrente do jogo e aplica as necessárias
