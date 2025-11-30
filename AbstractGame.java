@@ -15,8 +15,6 @@ public abstract class AbstractGame implements Game {
     Random random;
     Symbol[] symbols;
 
-
-
     /**
      * Construtor
      * Inicializa a área de jogo e gera a primeira peça.
@@ -71,6 +69,23 @@ public abstract class AbstractGame implements Game {
         this.currentPiece = new Piece(random, Game.SIZE_OF_PIECE, playArea.emptySymbol(), symbols);
 
     }
+
+    public int spaceInColumn(int col){
+        return playArea.spaceInColumn(col);
+    }
+
+    public String currentPiece(){
+        return currentPiece.toString();
+    }
+
+    public boolean finished(){
+        return !playArea.hasEnoughSpace(Game.SIZE_OF_PIECE);
+    }
+
+    public String toString(){
+        return playArea.currentGrid();
+    }
+
 
 
 }
