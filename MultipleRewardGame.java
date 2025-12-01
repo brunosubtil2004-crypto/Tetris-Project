@@ -3,39 +3,47 @@ import java.util.Random;
 
 public class MultipleRewardGame extends AbstractGame {
 
-    private int currentScore;
+    private int playPoints;
+    private int eliminationPoints;
 
     public MultipleRewardGame(int r, int c, int diff, Symbol empty, Symbol[] values,
                               Random gen, Eliminator elim, Accomodator acc) {
         super(r, c, diff, empty, values, gen, elim, acc);
-        this.currentScore = 0;
+        this.playPoints = 0;
+        this.eliminationPoints = 0;
     }
 
+    @Override
     public void registerPlayScore(List<Integer> eliminated) {
-        // Pontuação base por cada jogada
-        this.currentScore += 10;
+        this.playPoints += 10;
 
-        // Regra: 200 pts base (3 símbolos) + 50 pts por cada símbolo extra.
-        // A 1ª sequência vale x1, a 2ª vale x2, a 3ª vale x3, etc.
         int multiplier = 1;
 
         for (int numSymbols : eliminated) {
             if (numSymbols > 0) {
+                // Cálculo: 200 + (excesso * 50)
                 int pointsForThisSeq = 200 + ((numSymbols - 3) * 50);
 
-                this.currentScore += pointsForThisSeq * multiplier;
+                this.eliminationPoints += pointsForThisSeq * multiplier;
 
                 multiplier++;
             }
         }
     }
 
+    @Override
     public int score() {
-        return this.currentScore;
+        return this.playPoints + this.eliminationPoints;
     }
 
+    @Override
     public String toString() {
-        return "Score: " + score() + System.lineSeparator() + super.toString();
+        String base = super.toString();
+        String scoreLine = "Score of plays: " + this.playPoints +
+                "   Score of eliminations: " + this.eliminationPoints;
+
+        return base + scoreLine;
     }
+
 
 }
