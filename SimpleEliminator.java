@@ -1,6 +1,19 @@
 
 
+/**
+ * Implementação do interface Eliminator.
+ * @author Grupo 02 (fc62249, 62817, fc60932)
+ */
+
 public class SimpleEliminator implements Eliminator {
+
+    /**
+     * Procura uma sequência de símbolos no array seq e substitui-os pelo símbolo nothing.
+     * @param seq O array de símbolos onde procurar sequências.
+     * @param blockSize O tamanho mínimo da sequência para esta ser eliminada.
+     * @param nothing O símbolo a usar para substituir os símbolos eliminados (representa o vazio).
+     * @return O número de símbolos que foram efetivamente eliminados.
+     */
 
     @Override
     public int eliminateSequence(Symbol[] seq, int blockSize, Symbol nothing) {

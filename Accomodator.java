@@ -1,7 +1,10 @@
 
 
 
-/** Interface que define o comportamento de acomodamento de símbolos. */
+/** Interface que define o comportamento de acomodamento de símbolos.
+ *  @author grupo 02 (fc62249, 62817, fc60932)
+ *
+ **/
 public interface Accomodator {
 
     /**
