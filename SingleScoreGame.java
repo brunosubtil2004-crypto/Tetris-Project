@@ -9,7 +9,8 @@ import java.util.Random;
 
 public class SingleScoreGame extends AbstractGame {
 
-    private int currentScore;
+    private int points;
+    public static final int PLAY_SCORE = 10;
 
     /**
      * Construtor do SingleScoreGame.
@@ -27,7 +28,7 @@ public class SingleScoreGame extends AbstractGame {
     public SingleScoreGame(int r, int c, int diff, Symbol empty, Symbol[] values,
                            Random gen, Eliminator elim, Accomodator acc) {
         super(r, c, diff, empty, values, gen, elim, acc);
-        this.currentScore = 0;
+        this.points = 0;
     }
 
 
@@ -39,7 +40,7 @@ public class SingleScoreGame extends AbstractGame {
      */
     @Override
     public void registerPlayScore(List<Integer> eliminated) {
-        this.currentScore += 10;
+        this.points += PLAY_SCORE;
     }
 
 
@@ -49,7 +50,7 @@ public class SingleScoreGame extends AbstractGame {
      */
     @Override
     public int score() {
-        return this.currentScore;
+        return this.points;
     }
 
 

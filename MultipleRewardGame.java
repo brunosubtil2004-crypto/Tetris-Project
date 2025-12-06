@@ -10,7 +10,11 @@ public class MultipleRewardGame extends AbstractGame {
 
     // Contadores separados
     private int playPoints;
-    private int eliminationPoints;
+    private int elimPoints;
+
+    public static final int PLAY_SCORE = 10;
+    public static final int BASE_ELIM_POINTS = 200;
+    public static final int EXTRA_ELIM_POINTS = 50;
 
     /**
      * Construtor do MultipleRewardGame.
@@ -28,7 +32,7 @@ public class MultipleRewardGame extends AbstractGame {
                               Random gen, Eliminator elim, Accomodator acc) {
         super(r, c, diff, empty, values, gen, elim, acc);
         this.playPoints = 0;
-        this.eliminationPoints = 0;
+        this.elimPoints = 0;
     }
 
     /**
@@ -40,16 +44,16 @@ public class MultipleRewardGame extends AbstractGame {
      */
     @Override
     public void registerPlayScore(List<Integer> eliminated) {
-        this.playPoints += 10;
+        this.playPoints += PLAY_SCORE;
 
         int multiplier = 1;
 
         for (int numSymbols : eliminated) {
             if (numSymbols > 0) {
                 // Cálculo: 200 + (excesso * 50)
-                int pointsForThisSeq = 200 + ((numSymbols - 3) * 50);
+                int pointsForThisSeq = BASE_ELIM_POINTS + ((numSymbols - 3) * EXTRA_ELIM_POINTS);
 
-                this.eliminationPoints += pointsForThisSeq * multiplier;
+                this.elimPoints += pointsForThisSeq * multiplier;
 
                 multiplier++;
             }
@@ -62,7 +66,7 @@ public class MultipleRewardGame extends AbstractGame {
      */
     @Override
     public int score() {
-        return this.playPoints + this.eliminationPoints;
+        return this.playPoints + this.elimPoints;
     }
 
     /**
@@ -74,7 +78,7 @@ public class MultipleRewardGame extends AbstractGame {
     public String toString() {
         String base = super.toString();
         String scoreLine = "Score of plays: " + this.playPoints +
-                "   Score of eliminations: " + this.eliminationPoints;
+                "   Score of eliminations: " + this.elimPoints;
 
         return base + scoreLine;
     }
