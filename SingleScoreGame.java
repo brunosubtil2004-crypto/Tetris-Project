@@ -35,7 +35,7 @@ public class SingleScoreGame extends AbstractGame {
      * Atualiza a pontuação do jogo.
      * Neste modo, por cada jogada válida efetuada, o utilizador recebe 10 pontos,
      * independentemente do número de eliminações.
-     * @param eliminated Lista contendo o número de símbolos eliminados.
+     * @param eliminated Lista que contém o número de símbolos eliminados.
      */
     @Override
     public void registerPlayScore(List<Integer> eliminated) {

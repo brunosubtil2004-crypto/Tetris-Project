@@ -9,7 +9,7 @@ public class SimpleAccomodator implements Accomodator{
 
 
     /**
-     * Acomoda uma sequência de símbolos de modo a "fechar os buracos" (símbolos 'nothing').
+     * Acomoda uma sequência de símbolos de modo a "fechar os buracos".
      * Os símbolos válidos são deslocados para o final do array (fundo da coluna).
      * @param seq A sequência de símbolos a acomodar.
      * @param nothing O símbolo que representa o espaço vazio (buraco).

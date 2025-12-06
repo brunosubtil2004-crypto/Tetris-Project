@@ -127,7 +127,7 @@ public abstract class AbstractGame implements Game {
     }
 
     /**
-     * Devolve a representação textual do estado atual do jogo (Grelha e Peça).
+     * Devolve a representação do estado atual do jogo (Grelha e Peça).
      * @return String formatada com a grelha e a peça corrente.
      */
     @Override

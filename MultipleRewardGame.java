@@ -15,7 +15,7 @@ public class MultipleRewardGame extends AbstractGame {
     /**
      * Construtor do MultipleRewardGame.
      * Inicializa o jogo e coloca a pontuação a zero.
-     * * @param r Número de linhas.
+     * @param r Número de linhas.
      * @param c Número de colunas.
      * @param diff Dificuldade inicial.
      * @param empty Símbolo vazio.
@@ -32,11 +32,11 @@ public class MultipleRewardGame extends AbstractGame {
     }
 
     /**
-     * Atualiza a pontuação do jogo com base nas regras de recompensa múltipla.
+     * Atualiza a pontuação do jogo com base nas regras de recompensa.
      * - 10 pontos por jogada.
      * - 200 pontos base por 3 símbolos (+50 por cada extra).
      * - Multiplicador (x1, x2, x3) aplicado sequencialmente a cada eliminação na mesma jogada.
-     * * @param eliminated Lista contendo o número de símbolos eliminados em cada passo da jogada.
+     * @param eliminated Lista que contém o número de símbolos eliminados em cada passo da jogada.
      */
     @Override
     public void registerPlayScore(List<Integer> eliminated) {
